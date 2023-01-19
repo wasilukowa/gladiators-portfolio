@@ -1,0 +1,110 @@
+:root{
+	--sun-radius: 150px;
+	--sun-track-radius: 90vh;
+	--ground-height: 20vh;
+	--animation-duration: 10s;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	text-align: center;
+}
+
+.container {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	box-sizing: border-box;
+	position: relative;
+}
+
+#sun {
+	position: relative;
+	left: calc( (100vw - var(--sun-track-radius)) / 2);
+	bottom: calc( var(--ground-height) - 0.55 * var(--sun-track-radius));
+	height: var(--sun-track-radius);
+	width: var(--sun-track-radius);
+	border-radius: 50%;
+	animation: sun-move;
+	animation-duration: var(--animation-duration);
+	z-index: -1;
+}
+
+#sun::after {
+	display: block;
+	content: '';
+	width: var(--sun-radius);
+	height: var(--sun-radius);
+	border-radius: 50%;
+	position: relative;
+	top: calc( 50% - 0.5 * var(--sun-radius));
+	left: calc( -0.5 * var(--sun-radius));
+	animation-name: sun-color;
+	animation-duration: var(--animation-duration);
+	background-color: darkorange;
+}
+
+#sky {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	background-color: #165486;
+	animation-name: sunrise;
+	animation-duration: var(--animation-duration);
+	transform: rotate(180deg);
+}
+
+#ground {
+	height: var(--ground-height);
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	margin: 0px;
+	background-color: rgb(4, 68, 4);
+	box-sizing: border-box;
+}
+
+@keyframes sunrise {
+	0% {
+		background-color: #165486;
+	}
+	50% {
+		background-color: #96DED1;
+	}
+	100% {
+		background-color: #165486;
+	}
+}
+
+@keyframes sun-color {
+	0% {
+		background-color: #FFC300;
+	}
+	40% {
+		background-color: yellow;
+	}
+	70% {
+		background-color: #FFC300;
+	}
+	100% {
+		background-color: darkorange;
+	}
+}
+
+@keyframes sun-move {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}

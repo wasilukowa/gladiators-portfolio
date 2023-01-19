@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Introduction Form</title>
+  </head>
+
+  <body>
+    <form class="form" action="website-to-be-sent.pl">
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">
+          Dlaczego chcesz dołączyć do branży IT? *
+        </legend>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="unhappy-employee">
+            Aktualna praca mnie nie cieszy.
+          </label>
+          <input type="checkbox" id="unhappy-employee" checked />
+          <span class="checkmark"></span>
+        </div>
+
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="kid-programmer">
+            Za dziecka kodowałem_am.
+          </label>
+          <input type="checkbox" id="kid-programmer" checked />
+          <span class="checkmark"></span>
+        </div>
+
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="already_programmer">
+            Jestem już programistą_tką.
+          </label>
+          <input type="checkbox" id="already_programmer" />
+          <span class="checkmark"></span>
+        </div>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="computer-lover">
+            Lubię komputery.
+          </label>
+          <input type="checkbox" id="computer-lover" />
+          <span class="checkmark"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">
+          Czy uczyłeś_aś się kodować wczesniej? *
+        </legend>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="independently"> Samodzielnie. </label>
+          <input type="checkbox" id="independently" />
+          <span class="checkmark"></span>
+        </div>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="bootcamp"> Bootcamp. </label>
+          <input type="checkbox" id="bootcamp" checked />
+          <span class="checkmark"></span>
+        </div>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="study"> Studia. </label>
+          <input type="checkbox" id="study" />
+          <span class="checkmark"></span>
+        </div>
+        <div class="single-checkbox-container">
+          <label class="form-answer" for="no-koding-skills"> Nie. </label>
+          <input type="checkbox" id="no-koding-skills" />
+          <span class="checkmark"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">
+          Opisz w kilku zdaniach swoje wrażenia z nauki w innym miejscu.
+        </legend>
+        <textarea class="form-text-area form-big"></textarea>
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">Jaki jest Twój cel związany z nauką? *</legend>
+        <div class="custom-select" style="width:100%;" id="learning-aim">
+          <select>
+            <option selected>Wybierz odpowiedź z listy</option>
+            <option value="change_job">Zmienić pracę</option>
+            <option value="better_job">Znaleźć lepszą pracę</option>
+            <option value="improvement">Rozwój w technologii</option>
+            <option value="create_portfolio">Stworzyć portfolio</option>
+          </select>
+        </div>
+        </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">Jaką specjalizację chcesz osiągnąć?</legend>
+        <div class="custom-select" style="width:100%;">
+          <select>
+            <option>Wybierz z listy: </option>
+            <option value="backend">Backend JS</option>
+            <option value="frontend">Frontent JS</option>
+            <option value="solidity">Solidity</option>
+            <option value="python">Python</option>
+          </select>
+        </div>
+        </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">
+          Ile godzin tygodniowo możesz poświęcić na naukę? *
+        </legend>
+        <input class="form-text-area text-area-small" type="number" />
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">
+          Zaznacz na kalendarzu, kiedy chciałbyś zacząć naukę: *
+        </legend>
+        <div class="calendar">
+          <div class="calendar-header">
+            <p class="month-name">May 2022</p>
+            <div class="calendar-navigation">
+              <span class="arrow left"></span>
+              <span class="arrow right"></span>
+            </div>
+          </div>
+            <div class="calendar-item">
+              <span class="weekday">Pon</span>
+              <span class="weekday">Tue</span>
+              <span class="weekday">Wed</span>
+              <span class="weekday">Thu</span>
+              <span class="weekday">Fri</span>
+              <span class="weekday">Sat</span>
+              <span class="weekday">Sun</span>
+
+              <span class="day">1</span>
+              <span class="day">2</span>
+              <span class="day">3</span>
+              <span class="day">4</span>
+              <span class="day">5</span>
+              <span class="day">6</span>
+              <span class="day">7</span>
+
+              <span class="day">8</span>
+              <span class="day">9</span>
+              <span class="day">10</span>
+              <span class="day">11</span>
+              <span class="day">12</span>
+              <span class="day">13</span>
+              <span class="day">14</span>
+
+              <span class="day">15</span>
+              <span class="day">16</span>
+              <span class="day">17</span>
+              <span class="day chosen">18</span>
+              <span class="day">19</span>
+              <span class="day">20</span>
+              <span class="day">21</span>
+
+              <span class="day">22</span>
+              <span class="day">23</span>
+              <span class="day">24</span>
+              <span class="day">25</span>
+              <span class="day">26</span>
+              <span class="day">27</span>
+              <span class="day">28</span>
+
+              <span class="day">29</span>
+              <span class="day">30</span>
+              <span class="day unactive">1</span>
+              <span class="day unactive">2</span>
+              <span class="day unactive">3</span>
+              <span class="day unactive">4</span>
+              <span class="day unactive">5</span>
+
+            </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">Podaj swój numer telefonu. *</legend>
+        <input class="form-text-area" type="phone" />
+      </fieldset>
+
+      <fieldset class="form-fieldset-container">
+        <legend class="form-question">Podaj swój adres email. *</legend>
+        <input class="form-text-area" type="email" />
+      </fieldset>
+
+
+
+
+      <script src="script.js"></script>
+  </body>
+</html>

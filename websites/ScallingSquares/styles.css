@@ -1,0 +1,44 @@
+:root {
+	--square-size: 100px;
+	--multiply-factor: 2;
+	--animation-duration: 0.5s;
+}
+
+.header {
+	text-align: center;
+}
+
+.square-container{
+	height: 220px;
+}
+.square {
+	height: var(--square-size);
+	width: var(--square-size);
+	background-color: navy;
+	margin-bottom: 10px;
+}
+
+.square:hover{
+	transition-duration: var(--animation-duration);
+	
+	/* animation: rise var(--animation-duration); */
+	height: calc( var(--multiply-factor) * var(--square-size));
+	width: calc( var(--multiply-factor) * var(--square-size));
+}
+
+
+.square.scale-big:hover {
+	animation: rise-big 20s;
+}
+
+@keyframes rise-big {
+	0% {
+		height: 100px;
+		width: 100px;
+	}
+	100% {
+		height: 20000px;
+		width: 20000px;
+	}
+}
+

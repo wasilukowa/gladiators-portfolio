@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --color-main: #383C3E;
+    --color-input-text: #45494b;
+    --color-select-inactive: #737B7D;
+
+    --color-checkbox-checked: #3547E9;
+}
+
+body {
+    background: linear-gradient(180deg, #FFDBBC 0%, #FFEA7F 100%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-main);
+    line-height: 160%;
+}
+
+.form {
+    box-sizing: border-box;
+    padding: 70px;
+    width: 690px;
+}
+
+.form-fieldset-container {
+    border: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.form-question {
+    display: block;
+    margin-left: 16px;
+    margin-bottom: 10px;
+}
+
+.form-text-area {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-main);
+    box-sizing: border-box;
+    padding-left: 16px;
+    min-height: 30px;
+    font-family: Inter;
+    font-size: 16px;
+    color: var(--color-input-text);
+}
+
+.form-text-area.form-big {
+    min-height: 200px;
+    padding: 16px;
+}
+
+.form-text-area.text-area-small {
+    width: 160px;
+}
+
+.form-checkbox-element {
+    margin-bottom: 10px;
+}
+
+.single-checkbox-container {
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.single-checkbox-container label {
+    display: block;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 2;
+  }
+  
+  .single-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 1px solid var(--color-main);
+    border-radius: 2px;
+    z-index: -2;
+  }
+  
+  .single-checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .single-checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-checkbox-checked);
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .single-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .single-checkbox-container .checkmark:after {
+    left: 4px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-image: url('icon.png');
+    background-repeat: no-repeat;
+  }
+
+ .form-fieldset-container.select-container {
+    height: 60px;
+    position: relative;
+    width: 100%;
+ }
+
+  .calendar {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .calendar-header {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .month-name {
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .arrow {
+    border: solid var(--color-main);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .calendar-item {
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px 40px 40px;
+    grid-gap: 1px;
+    cursor: pointer;
+  }
+
+  .weekday {
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .day {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid var(--color-main);
+  }
+
+  .day:hover {
+    background-color: #ccc;
+  }
+
+  .day.chosen {
+    background-color: var(--color-checkbox-checked);
+    font-size: 600;
+    color: white;
+  }
+
+  .day.unactive {
+    color: var(--color-select-inactive)
+  }
+
+  .day.unactive:hover {
+    background-color: transparent;
+  }
+
+
+  /* SELECT STYLING: */
+  /* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Inter;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--color-select-inactive);
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: transparent;
+  color: var(--color-main);
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 15px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--);
+  border: 1px solid var(--color-main);
+  border-color: transparent transparent var(--color-main) var(--color-main);
+  transform: rotate(-45deg);
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  transform: rotate(-225deg) translate(8px, -10px);
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 30px;
+  padding: 2px 0 2px 16px;
+  border: 1px solid var(--color-main);
+}
+
+.select-items div {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.select-items div:nth-child(4) {
+  border-bottom-color: var(--color-main);
+}
+
+.select-selected {
+  color: var(--color-main);
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background: #FFDBBC;
+  border-color: transparent;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  color: var(--color-main);
+}
